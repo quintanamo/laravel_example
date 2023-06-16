@@ -1,4 +1,21 @@
 .html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    font-size: 62.5%;
+    background-color: #ddddff;
+    font-family: sans-serif;
+}
+
+@import 'components/navigation.scss';
+
+.header {
+    width: 100%;
+}
+
+.primary-header {
+    width: 100%;
+    font-size: 4rem;
+    color: #111133;
+    text-align: center;
 }
