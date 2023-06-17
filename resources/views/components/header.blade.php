@@ -1,4 +1,4 @@
 <header class="header">
-    <h1 class="primary-header">Example Site</h1>
+    <h1 class="primary-header p-2">Example Site</h1>
     <x-navigation />
 </header>

@@ -1,21 +1,24 @@
-.html, body {
+@import "abstracts/variables";
+@import "base/typography";
+@import "base/utilities";
+@import 'components/navigation';
+@import 'layout/header';
+
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
-    font-size: 62.5%;
-    background-color: #ddddff;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
     font-family: sans-serif;
 }
 
-@import 'components/navigation.scss';
-
-.header {
-    width: 100%;
+body {
+    min-height: 100vh;
 }
 
-.primary-header {
-    width: 100%;
-    font-size: 4rem;
-    color: #111133;
-    text-align: center;
+html, body {
+    background-color: $color-off-white;
 }

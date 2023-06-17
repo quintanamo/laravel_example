@@ -1,0 +1,19 @@
+.nav {
+    border-top: 2px solid $color-off-black;
+    border-bottom: 2px solid $color-off-black;
+    display: flex;
+    justify-content: center;
+
+    &__link {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+        color: $color-off-black;
+        text-decoration: none;
+        transition: 0.3s ease;
+
+        &:hover {
+            background-color: $color-off-black;
+            color: $color-off-white;
+        }
+    }
+}
