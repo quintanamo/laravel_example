@@ -1,0 +1,26 @@
+.article {
+    width: 90rem;
+    margin: 0 auto;
+    padding: 4rem 0;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid #aaaaaa;
+    }
+
+    &__author {
+        font-size: 1.4rem;
+        color: #656565;
+        margin-left: 2rem;
+    }
+
+    &__date {
+        font-size: 1.4rem;
+        color: #656565;
+        text-align: right;
+        margin-top: 1rem;
+    }
+
+    &__body {
+        font-size: 1.4rem;
+    }
+}
