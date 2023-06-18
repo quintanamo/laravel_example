@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,6 @@ Route::get('/', function () {
 
 
 Route::get('/articles', function () {
-    return view('articles');
+    $articles = Article::paginate(3);
+    return view('articles', ['articles' => $articles]);
 });

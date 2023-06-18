@@ -8,18 +8,16 @@
 </head>
 <body>
     <x-header />
-    <?php
-        use App\Models\Article;
-        $articles = Article::all(); 
-    ?>
 
-        @foreach ($articles as $article)
-            <article class="article">
-                <h2 class="secondary-header pb-2">{{ $article['title'] }}<span class="article__author">by {{ $article['author'] }}</span></h2>
-                <p class="article__body">{{ $article['body'] }}</p>
-                <div class="article__date">{{ $article['created_at']->format('m/d/Y')}}</div>
-            </article>
-        @endforeach
+    @foreach ($articles as $article)
+        <article class="article">
+            <h2 class="secondary-header pb-2">{{ $article['title'] }}<span class="article__author">by {{ $article['author'] }}</span></h2>
+            <p class="article__body">{{ $article['body'] }}</p>
+            <div class="article__date">{{ $article['created_at']->format('m/d/Y')}}</div>
+        </article>
+    @endforeach
+
+    {{ $articles->links('components.paginator') }}
 
 </body>
 </html>

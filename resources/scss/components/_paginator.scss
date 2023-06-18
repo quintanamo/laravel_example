@@ -1,0 +1,32 @@
+.paginator {
+    width: 90rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    padding: 2rem 0;
+    list-style: none;
+
+    & > li {
+        padding: 1rem;
+        border-radius: .5rem;
+
+        & > a {
+            text-decoration: none;
+            color: $color-off-black;
+        }
+
+        &.active {
+            background-color: $color-off-black;
+            color: $color-off-white;
+        }
+
+        &.disabled {
+            color: #aaaaaa;
+        }
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
