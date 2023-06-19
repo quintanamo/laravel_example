@@ -18,8 +18,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-
 Route::get('/articles', function () {
     $articles = Article::paginate(3);
     return view('articles', ['articles' => $articles]);
+});
+
+Route::get('/admin', function () {
+    return view('admin');
 });
