@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('/articles', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::post('/user/checklogin', [UserController::class, 'checklogin']);
+Route::post('/user/logout', [UserController::class, 'logout']);
