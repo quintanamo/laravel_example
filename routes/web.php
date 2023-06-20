@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +20,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/articles', function () {
-    $articles = Article::paginate(3);
-    return view('articles', ['articles' => $articles]);
-});
-
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::get('/articles', [ArticleController::class, 'index']);
+Route::post('/articles', [ArticleController::class, 'createarticle']);
 
 Route::post('/user/checklogin', [UserController::class, 'checklogin']);
 Route::post('/user/logout', [UserController::class, 'logout']);

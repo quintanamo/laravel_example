@@ -15,6 +15,24 @@
                 <input type="submit" name="logout" class="btn btn-primary" value="Logout" />
             </div>
         </form>
+        <form method="post" action="{{ url('/articles') }}">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label>Enter Title</label>
+                <input type="text" name="title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Enter Author</label>
+                <input type="text" name="author" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Enter Body</label>
+                <textarea name="body"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submitarticle" class="btn btn-primary" value="Post Article" />
+            </div>
+        </form>
     @else
         <form method="post" action="{{ url('/user/checklogin') }}">
             {{ csrf_field() }}
