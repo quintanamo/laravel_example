@@ -7,14 +7,30 @@
     <title>Example Laravel Site</title>
 </head>
 <body>
+    @if (\Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! \Session::get('success') !!}</li>
+            </ul>
+        </div>
+    @endif
+    @if (\Session::has('failure'))
+        <div class="alert alert-failure">
+            <ul>
+                <li>{!! \Session::get('failure') !!}</li>
+            </ul>
+        </div>
+    @endif
     @if(isset(Auth::user()->email))
         Logged In
+        <h2>Logout</h2>
         <form method="post" action="{{ url('/user/logout') }}">
             {{ csrf_field() }}
             <div class="form-group">
                 <input type="submit" name="logout" class="btn btn-primary" value="Logout" />
             </div>
         </form>
+        <h2>Article Form</h2>
         <form method="post" action="{{ url('/articles') }}">
             {{ csrf_field() }}
             <div class="form-group">
@@ -33,8 +49,19 @@
                 <input type="submit" name="submitarticle" class="btn btn-primary" value="Post Article" />
             </div>
         </form>
+        <h2>Image Form</h2>
+        <form method="post" action="{{ url('/image') }}" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" accept=".gif,.jpg,.jpeg,.png" name="image" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" name="uploadImage" class="btn btn-primary" value="Upload Image" />
+            </div>
+        </form>
     @else
-        <form method="post" action="{{ url('/user/checklogin') }}">
+        <form method="post" action="{{ url('/user/login') }}">
             {{ csrf_field() }}
             <div class="form-group">
                 <label>Enter Email</label>

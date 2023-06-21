@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Article;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,7 @@ Route::get('/admin', function () {
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::post('/articles', [ArticleController::class, 'createarticle']);
 
-Route::post('/user/checklogin', [UserController::class, 'checklogin']);
+Route::post('/image', [ImageController::class, 'uploadImage']);
+
+Route::post('/user/login', [UserController::class, 'login']);
 Route::post('/user/logout', [UserController::class, 'logout']);

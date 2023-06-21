@@ -8,7 +8,7 @@ use Auth;
 
 class UserController extends Controller
 {
-    function checklogin(Request $request)
+    function login(Request $request)
     {
         $this->validate($request, [
             'email'   => 'required|email',
