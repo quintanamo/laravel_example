@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Image;
-
 use Illuminate\Http\Request;
-//use App\Models\Image;
 use Illuminate\Support\Facades\Validator;
+use ImageOptimizer;
 
 class ImageController extends Controller
 {
@@ -23,6 +22,8 @@ class ImageController extends Controller
                           'year' => '2023',
                           'file_path' => getenv('APP_URL').'images/'.$imageName,
                           'thumbnail_file_path' => getenv('APP_URL').'images/'.$imageName]);
+
+            ImageOptimizer::optimize($filePath.$imageName);
 
             return redirect('admin')->with('success', "Image successfully uploaded!");
         } else {
