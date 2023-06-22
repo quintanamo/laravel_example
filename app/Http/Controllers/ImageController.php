@@ -21,8 +21,8 @@ class ImageController extends Controller
                           'size' => 'Static Size',
                           'materials' => 'Static Materials',
                           'year' => '2023',
-                          'file_path' => getenv('APP_URL').'images/'.$filePath,
-                          'thumbnail_file_path' => getenv('APP_URL').'images/'.$filePath]);
+                          'file_path' => getenv('APP_URL').'images/'.$imageName,
+                          'thumbnail_file_path' => getenv('APP_URL').'images/'.$imageName]);
 
             return redirect('admin')->with('success', "Image successfully uploaded!");
         } else {
