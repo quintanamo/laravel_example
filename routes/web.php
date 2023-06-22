@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
+use App\Models\Image;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ImageController;
@@ -27,6 +28,11 @@ Route::get('/admin', function () {
 
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::post('/articles', [ArticleController::class, 'createarticle']);
+
+Route::get('/gallery', function () {
+    $images = Image::paginate(5);
+    return view('gallery', ['images' => $images]);
+});
 
 Route::post('/image', [ImageController::class, 'uploadImage']);
 
